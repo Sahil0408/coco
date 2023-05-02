@@ -1,0 +1,13 @@
+﻿@model coco.Models.Usersmodal
+
+<h1 style="font-family:Algerian;text-align:center">List of Registered Users</h1>
+
+    @foreach(Detailmodal obje in Model.details)
+{
+    <p style="text-align:center;font-size:x-large">
+        <b style="color:darkred;font-weight:bold"> ID: </b> <u>@obje.Id</u>
+        <b style="color:darkred;font-weight:bold">Name: </b> <u>@obje.Name</u>
+        <b style="color:darkred;font-weight:bold">Age: </b> <u>@obje.Age</u>
+        <b style="color:darkred;font-weight:bold">Email: </b> <u>@obje.Email</u>
+    </p>
+}

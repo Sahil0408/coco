@@ -1,0 +1,84 @@
+﻿@model coco.Models.Registrationmodal
+
+<h1 style="text-align:center; font-family:Algerian;font-size:xx-large">Registration</h1>
+
+<script>
+    function validate()
+    {
+        var result=true;
+
+        let Name=$("#Name").val();
+            if(Name=="")
+            {
+                $("#msg").html("Name is required");
+                result=false;
+                return result;
+            }
+            else
+            {
+                $("#msg").html("");
+            }
+        let Age = $("#Age").val();
+        if (Age == "") 
+        {
+            $("#msg").html("Age is required");
+            result = false;
+            return result;
+        }
+        else 
+        {
+            $("#msg").html("");
+        }
+        let Email = $("#Email").val();
+        if (Email == "") 
+        {
+            $("#msg").html("Email is required");
+            result = false;
+            return result;
+        }
+        else 
+        {
+            $("#msg").html("");
+        }
+        let Username = $("#Username").val();
+        if (Username == "") 
+        {
+            $("#msg").html("Username is required");
+            result = false;
+            return result;
+        }
+        else 
+        {
+            $("#msg").html("");
+        }
+        let Password = $("#Password").val();
+        if (Password == "") 
+        {
+            $("#msg").html("Password is required");
+            result = false;
+            return result;
+        }
+        else 
+        {
+            $("#msg").html("");
+        }
+        return result;
+    }
+
+
+</script>
+
+<form asp-controller="Coco" asp-action="Registration" method="post">
+   
+    <p style="text-align:center;color:red;font-weight:bold " id="msg"></p>
+    <p style="text-align:center;color:green">@TempData["Message"]</p>
+    <p style="text-align:center" >Name :- <input type="text" id="Name" name="Name" value="@Model.Name" /></p>
+    <p style ="text-align:center">Age :- <input type="text" id="Age" name="Age" value="@Model.Age" /></p>
+    <p style="text-align:center">Email :- <input type="email" id="Email" name="Email" value="@Model.Email" /></p>
+    <p style="text-align:center">Username :- <input type="text" id="Username" name="Username" value="@Model.Username" /></p>
+    <p style="text-align:center">Password :- <input type="password" id="Password" name="Password" value="@Model.Password" /></p>
+    <p style="text-align:center; color:green"><input type="submit" onclick="return validate()"  id="submit" value="Submit" /></p>
+    
+    <br />
+
+</form>

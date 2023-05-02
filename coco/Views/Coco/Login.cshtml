@@ -1,0 +1,18 @@
+﻿@model coco.Models.Loginmodal
+
+  
+
+<h1 style="font-family:Algerian;text-align:center" >Login</h1>
+
+<p style="font-family:'Arial Rounded MT';text-align:center; color:Red">@TempData["Message"]</p>
+
+<form asp-controller="Coco" asp-action="Login" asp-area="">
+    <p style="text-align:center">Username : <input type="text" id="Username" name="Username" value="@Model.Username" /></p>
+    <p style="text-align:center">Password : <input type="password" id="Password" name="Password" value="@Model.Password" /></p>
+    <p style="text-align:center"><input type="submit" id="submit" value="Login" /></p>
+   <a asp-controller="Coco" asp-action="ForgotPassword" method="post">
+       
+    <p style="text-align:center"> <input type="button" value="ForgotPassword" /> </p>
+    </a>
+
+</form>
